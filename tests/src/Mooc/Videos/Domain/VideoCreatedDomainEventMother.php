@@ -8,6 +8,7 @@ use CodelyTv\Mooc\Shared\Domain\Courses\CourseId;
 use CodelyTv\Mooc\Shared\Domain\Videos\VideoUrl;
 use CodelyTv\Mooc\Videos\Domain\VideoCreatedDomainEvent;
 use CodelyTv\Mooc\Videos\Domain\VideoId;
+use CodelyTv\Mooc\Videos\Domain\VideoPublished;
 use CodelyTv\Mooc\Videos\Domain\VideoTitle;
 use CodelyTv\Mooc\Videos\Domain\VideoType;
 use CodelyTv\Test\Mooc\Shared\Domain\Courses\CourseIdMother;
@@ -20,7 +21,8 @@ final class VideoCreatedDomainEventMother
         VideoType $type,
         VideoTitle $title,
         VideoUrl $url,
-        CourseId $courseId
+        CourseId $courseId,
+        VideoPublished $published
     ): VideoCreatedDomainEvent {
         return new VideoCreatedDomainEvent(
             $id->value(),
@@ -29,6 +31,7 @@ final class VideoCreatedDomainEventMother
                 'title'    => $title->value(),
                 'url'      => $url->value(),
                 'courseId' => $courseId->value(),
+                'published' => $published->value(),
             ]
         );
     }
@@ -40,7 +43,8 @@ final class VideoCreatedDomainEventMother
             VideoTypeMother::random(),
             VideoTitleMother::random(),
             VideoUrlMother::random(),
-            CourseIdMother::random()
+            CourseIdMother::random(),
+            VideoPublishedMother::random()
         );
     }
 }

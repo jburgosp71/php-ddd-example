@@ -4,6 +4,7 @@ CREATE TABLE `videos` (
   `title` VARCHAR(255) NOT NULL,
   `url` VARCHAR(255) NOT NULL,
   `course_id` CHAR(36) NOT NULL,
+  `published` VARCHAR(24) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

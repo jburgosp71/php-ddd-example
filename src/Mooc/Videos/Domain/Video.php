@@ -15,14 +15,17 @@ final class Video extends AggregateRoot
     private $title;
     private $url;
     private $courseId;
+    private $published;
 
-    public function __construct(VideoId $id, VideoType $type, VideoTitle $title, VideoUrl $url, CourseId $courseId)
+    public function __construct(VideoId $id, VideoType $type, VideoTitle $title, VideoUrl $url, CourseId $courseId,
+                                VideoPublished $published)
     {
         $this->id         = $id;
         $this->type       = $type;
         $this->title      = $title;
         $this->url        = $url;
         $this->courseId   = $courseId;
+        $this->published  = $published;
     }
 
     public static function create(
@@ -30,9 +33,10 @@ final class Video extends AggregateRoot
         VideoType $type,
         VideoTitle $title,
         VideoUrl $url,
-        CourseId $courseId
+        CourseId $courseId,
+        VideoPublished $published
     ): Video {
-        $video = new self($id, $type, $title, $url, $courseId);
+        $video = new self($id, $type, $title, $url, $courseId, $published);
 
         $video->record(
             new VideoCreatedDomainEvent(
@@ -42,6 +46,7 @@ final class Video extends AggregateRoot
                     'title'    => $title->value(),
                     'url'      => $url->value(),
                     'courseId' => $courseId->value(),
+                    'published' => $published->value(),
                 ]
             )
         );
@@ -77,5 +82,10 @@ final class Video extends AggregateRoot
     public function courseId(): CourseId
     {
         return $this->courseId;
+    }
+
+    public function published(): VideoPublished
+    {
+        return $this->published;
     }
 }

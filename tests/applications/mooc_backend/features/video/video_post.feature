@@ -12,7 +12,8 @@ Feature: Create video
       "title": "Exprimiendo los tipos de PHP7",
       "url": "https://codely.tv/screencasts/tipos-php-7/",
       "type": "screencast",
-      "course_id": "9c8a481a-0fe2-49cf-ab8a-79bcc2965d00"
+      "course_id": "9c8a481a-0fe2-49cf-ab8a-79bcc2965d00",
+      "published": "20190902110000"
     }
     """
     Then the response should be empty
@@ -27,7 +28,8 @@ Feature: Create video
       "title": "Entrevista Raúl Raja - CTO 47 Degrees",
       "url": "https://codely.tv/entrevistas/raul-raja-cto-47-degrees/",
       "type": "interview",
-      "course_id": "48c2c2ea-bd93-4248-9f71-81ad37ad5647"
+      "course_id": "48c2c2ea-bd93-4248-9f71-81ad37ad5647",
+      "published": "20190902110000"
     }
     """
     Then the response should be empty

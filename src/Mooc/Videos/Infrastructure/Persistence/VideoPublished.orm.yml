@@ -1,0 +1,7 @@
+CodelyTv\Mooc\Videos\Domain\VideoPublished:
+  type: embeddable
+
+  fields:
+    value:
+      type: string
+      column: published

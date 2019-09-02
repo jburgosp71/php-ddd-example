@@ -26,6 +26,7 @@ final class VideoCreatedDomainEvent extends DomainEvent
             'title'    => ['string'],
             'url'      => ['string'],
             'courseId' => ['string'],
+            'published' => ['string'],
         ];
     }
 }

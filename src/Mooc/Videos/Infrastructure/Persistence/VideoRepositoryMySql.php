@@ -24,6 +24,7 @@ final class VideoRepositoryMySql extends DoctrineRepository implements VideoRepo
         'title'     => 'title',
         'url'       => 'url',
         'course_id' => 'courseId',
+        'published' => 'published',
     ];
 
     public function save(Video $video): void
@@ -38,7 +39,7 @@ final class VideoRepositoryMySql extends DoctrineRepository implements VideoRepo
 
     public function searchLastPublished(): ?Video
     {
-        $orderBy = new OrderBy("id");
+        $orderBy = new OrderBy("published");
         $orderType = new OrderType("desc");
         $order = new Order($orderBy, $orderType);
         $filters = Filters::fromValues(array());

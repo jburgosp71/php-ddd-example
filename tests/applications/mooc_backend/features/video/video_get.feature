@@ -12,7 +12,8 @@ Feature: Find a video
       "title": "Exprimiendo los tipos de PHP7",
       "url": "https://codely.tv/screencasts/tipos-php-7/",
       "type": "screencast",
-      "course_id": "9c8a481a-0fe2-49cf-ab8a-79bcc2965d00"
+      "course_id": "9c8a481a-0fe2-49cf-ab8a-79bcc2965d00",
+      "published": "20190902110000"
     }
     """
     Then the response should be empty
@@ -28,7 +29,8 @@ Feature: Find a video
       "title": "Exprimiendo los tipos de PHP7",
       "url": "https://codely.tv/screencasts/tipos-php-7/",
       "type": "screencast",
-      "course_id": "9c8a481a-0fe2-49cf-ab8a-79bcc2965d00"
+      "course_id": "9c8a481a-0fe2-49cf-ab8a-79bcc2965d00",
+      "published": "20190902110000"
     }
     """
 

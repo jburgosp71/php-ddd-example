@@ -38,7 +38,8 @@ final class FindVideoTest extends VideoModuleUnitTestCase
             $video->type(),
             $video->title(),
             $video->url(),
-            $video->courseId()
+            $video->courseId(),
+            $video->published()
         );
 
         $this->shouldSearchVideo($id, $video);

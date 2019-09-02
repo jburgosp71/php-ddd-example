@@ -8,11 +8,13 @@ use CodelyTv\Mooc\Shared\Domain\Courses\CourseId;
 use CodelyTv\Mooc\Shared\Domain\Videos\VideoUrl;
 use CodelyTv\Mooc\Videos\Application\Find\VideoResponse;
 use CodelyTv\Mooc\Videos\Domain\VideoId;
+use CodelyTv\Mooc\Videos\Domain\VideoPublished;
 use CodelyTv\Mooc\Videos\Domain\VideoTitle;
 use CodelyTv\Mooc\Videos\Domain\VideoType;
 use CodelyTv\Test\Mooc\Shared\Domain\Courses\CourseIdMother;
 use CodelyTv\Test\Mooc\Shared\Domain\Videos\VideoUrlMother;
 use CodelyTv\Test\Mooc\Videos\Domain\VideoIdMother;
+use CodelyTv\Test\Mooc\Videos\Domain\VideoPublishedMother;
 use CodelyTv\Test\Mooc\Videos\Domain\VideoTitleMother;
 use CodelyTv\Test\Mooc\Videos\Domain\VideoTypeMother;
 use CodelyTv\Test\Shared\Domain\DuplicatorMother;
@@ -24,9 +26,12 @@ final class VideoResponseMother
         VideoType $type,
         VideoTitle $title,
         VideoUrl $url,
-        CourseId $courseId
+        CourseId $courseId,
+        VideoPublished $published
     ): VideoResponse {
-        return new VideoResponse($id->value(), $type->value(), $title->value(), $url->value(), $courseId->value());
+        return new VideoResponse($id->value(), $type->value(), $title->value(), $url->value(), $courseId->value(),
+                                 $published->value()
+        );
     }
 
     public static function withId(VideoId $id): VideoResponse
@@ -41,7 +46,8 @@ final class VideoResponseMother
             VideoTypeMother::random(),
             VideoTitleMother::random(),
             VideoUrlMother::random(),
-            CourseIdMother::random()
+            CourseIdMother::random(),
+            VideoPublishedMother::random()
         );
     }
 }
