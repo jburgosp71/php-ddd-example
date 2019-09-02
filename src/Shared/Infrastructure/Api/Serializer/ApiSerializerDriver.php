@@ -29,6 +29,7 @@ final class ApiSerializerDriver extends CodelyTvSerializerDriver
                 'title'    => ['type' => 'string'],
                 'url'      => ['type' => 'string'],
                 'courseId' => ['type' => 'string'],
+                'published' => ['type' => 'string'],
             ],
         ];
     }

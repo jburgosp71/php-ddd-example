@@ -28,7 +28,7 @@ final class CreateVideoCommandHandler implements CommandHandler
         $title     = new VideoTitle($command->title());
         $url       = new VideoUrl($command->url());
         $courseId  = new CourseId($command->courseId());
-        $published = new VideoPublished();
+        $published = new VideoPublished($command->published());
 
         $this->creator->create($id, $type, $title, $url, $courseId, $published);
     }

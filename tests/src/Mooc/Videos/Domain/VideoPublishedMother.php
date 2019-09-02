@@ -10,7 +10,7 @@ final class VideoPublishedMother
 {
     public static function create(): VideoPublished
     {
-        return new VideoPublished();
+        return new VideoPublished('20191111000000');
     }
 
     public static function random(): VideoPublished

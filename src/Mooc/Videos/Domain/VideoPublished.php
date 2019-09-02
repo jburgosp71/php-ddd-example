@@ -9,10 +9,14 @@ use DateTime;
 
 final class VideoPublished extends StringValueObject
 {
-    public function __construct()
+    public function __construct(string $initialDate = null)
     {
-        $now = new DateTime();
+        if (is_null($initialDate))
+        {
+            $now = new DateTime();
+            $initialDate = $now->format('YmdHis');
+        }
 
-        parent::__construct($now->format('YmdHis'));
+        parent::__construct($initialDate);
     }
 }

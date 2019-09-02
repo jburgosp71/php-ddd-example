@@ -35,16 +35,16 @@ final class CreateVideoTest extends VideoModuleUnitTestCase
     {
         $command = CreateVideoCommandMother::random();
 
-        $id       = VideoIdMother::create($command->id());
-        $type     = VideoTypeMother::create($command->type());
-        $title    = VideoTitleMother::create($command->title());
-        $url      = VideoUrlMother::create($command->url());
-        $courseId = CourseIdMother::create($command->courseId());
-        $published= VideoPublishedMother::create();
+        $id        = VideoIdMother::create($command->id());
+        $type      = VideoTypeMother::create($command->type());
+        $title     = VideoTitleMother::create($command->title());
+        $url       = VideoUrlMother::create($command->url());
+        $courseId  = CourseIdMother::create($command->courseId());
+        $published = VideoPublishedMother::create();
 
-        $video = VideoMother::create($id, $type, $title, $url, $courseId,$published);
+        $video = VideoMother::create($id, $type, $title, $url, $courseId, $published);
 
-        $domainEvent = VideoCreatedDomainEventMother::create($id, $type, $title, $url, $courseId,$published);
+        $domainEvent = VideoCreatedDomainEventMother::create($id, $type, $title, $url, $courseId, $published);
 
         $this->shouldSaveVideo($video);
         $this->shouldPublishDomainEvents($domainEvent);
